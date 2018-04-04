@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task - 2</title>
+</head>
+<body>
+	
+2. Write a JavaScript function which accept a string as input and swap the case of each character. 
+
+For example if you input 'The Quick Brown Fox' the output should be 'tHE qUICK bROWN fOX'
+
+<script>
+	'use strict';
+
+	function invertCase(str){
+		let output = '';
+		for (let i = 0, n = str.length; i < n; i++){
+			const ch = str[i];
+			output += ch.toUpperCase() === ch ? ch.toLowerCase() : ch.toUpperCase();
+		}
+		return output;
+	}
+
+	console.log(invertCase('The Quick Brown Fox'));
+
+</script>
+</body>
+</html>

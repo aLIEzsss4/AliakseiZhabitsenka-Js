@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Buffer</title>
+</head>
+<body>
+	
+<script>
+	'use strict';
+
+	function makeBuffer(){
+		let sum = '';
+		return function(str){
+			if (arguments.length) return sum += str;
+			return sum;
+		}
+	}
+
+	const buffer = makeBuffer();
+
+	buffer('Использовал!');
+	buffer(' ');
+	buffer('Проверяй!');
+
+	console.log(buffer());
+
+
+	const buffer2 = makeBuffer();
+
+	buffer2(3);
+	buffer2(2);
+	buffer2(2);
+
+	console.log(buffer2());
+
+
+	const buffer3 = makeBuffer();
+
+	buffer3(undefined);
+	buffer3(null);
+	buffer3(NaN);
+	buffer3('foobar');
+
+	console.log(buffer3());
+
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task - 1</title>
+</head>
+<body>
+
+1. Write a simple JavaScript function to join all elements of the following array into a string
+
+Sample array : myColor = ["Red", "Green", "White", "Black"];
+Expected Output : 
+"Red,Green,White,Black"
+"Red,Green,White,Black"
+"Red+Green+White+Black"
+
+<script>
+	'use strict';
+	
+	function join(arr, connect){
+		let output = ''; // Accumulate output here
+		for (let i = 0, n = arr.length; i < n; i++){
+			output += arr[i]; // Add array's element to common output
+			if (i !== arr.length - 1) output += connect; // Add connector to common output if not last element of array
+		}
+		return output; // Return the output
+	}
+
+	const arr = [23, 32, 'wer', null, undefined, ['qwer', 342, 'er'], NaN, {property: 'foobar', method: function(){console.log('smthng')}}];
+	console.log(join(arr, ', '));
+
+	const myColor = ["Red", "Green", "White", "Black"];
+	console.log(join(myColor, ','));
+	console.log(join(myColor, ', '));
+	console.log(join(myColor, '+'));
+
+</script>
+</body>
+</html>
