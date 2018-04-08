@@ -16,7 +16,7 @@
 		for (let i = 2; i <= before; i++){
 			if (all[i] === false) continue;
 			output.push(i);
-			for (let n = i; n <= before; n += i){
+			for (let n = i*i; n <= before; n += i){
 				all[n] = false;
 			}
 		}
