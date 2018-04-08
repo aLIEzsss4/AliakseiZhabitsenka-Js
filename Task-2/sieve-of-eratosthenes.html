@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sieve of Eratosthenes</title>
+</head>
+<body>
+
+	https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+
+<script>
+
+	function getPrimes(before){
+		const all = [];
+		const output = [];
+		for (let i = 2; i <= before; i++){
+			if (all[i] === false) continue;
+			output.push(i);
+			let n = i*i;
+			while (n <= before){
+				all[n] = false;
+				n += i;
+			}
+		}
+		return output;
+	}
+
+	console.log(getPrimes(10000000));
+
+
+	const t1 = performance.now();
+	getPrimes(100000);
+	const t2 = performance.now();
+	console.log(t2 - t1);
+
+	
+
+
+</script>
+</body>
+</html>
