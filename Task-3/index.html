@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cars App</title>
+</head>
+<body>
+
+<script src="Car.js"></script>
+<script src="Zhiguli.js"></script>
+<script>
+	'use strict';
+
+	const car = new Zhiguli();
+	car.accelerateTo(100);
+	
+	const buttons = document.createElement('div');
+
+	const buttonShowSpeed = document.createElement('button');
+	buttonShowSpeed.textContent = 'show speed';
+	buttonShowSpeed.onclick = () => car.showSpeed();
+
+	const buttonStopShowingSpeed = document.createElement('button');
+	buttonStopShowingSpeed.textContent = 'stop showing speed';
+	buttonStopShowingSpeed.onclick = () => car.stopShowingSpeed();
+
+	buttons.appendChild(buttonShowSpeed);
+	buttons.appendChild(buttonStopShowingSpeed);
+
+	document.body.appendChild(buttons);
+</script>
+</body>
+</html>
