@@ -3,31 +3,82 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Cars App</title>
+	<style>
+		#speedo {
+			position: absolute;
+			width: 140px;
+			top: 20px;
+			right: 20px;
+			padding: 10px;
+			border: 2px solid #aaa;
+		}
+		#speedo:before {
+			content: 'Speed :';
+			position: absolute;
+			left: -20px;
+			top: 50%;
+			font-size: 20px;
+			font-weight: bold;
+			transform: translate(-100%, -50%);
+		}
+		#distancemeter {
+			position: absolute;
+			width: 140px;
+			top: 70px;
+			right: 20px;
+			padding: 10px;
+			border: 2px solid #aaa;
+		}
+		#distancemeter:before {
+			content: 'Distance :';
+			position: absolute;
+			left: -20px;
+			top: 50%;
+			font-size: 20px;
+			font-weight: bold;
+			transform: translate(-100%, -50%);
+		}
+	</style>
 </head>
 <body>
 
-<script src="Car.js"></script>
-<script src="Zhiguli.js"></script>
+	<div id="speedo"></div>
+	<div id="distancemeter"></div>
+
+<script src="Car/Car.js"></script>
+<script src="Car/extends/Bentley.js"></script>
+<script src="Car/extends/Zhiguli.js"></script>
+<script src="Car/extends/Mercedes.js"></script>
 <script>
-	'use strict';
 
-	const car = new Zhiguli();
-	car.accelerateTo(100);
+	const car1 = new Mercedes();
+	car1.speed = 1000
+	car1.displaySpeed(document.getElementById('speedo'));
+	car1.displayDistance(document.getElementById('distancemeter'));
 	
-	const buttons = document.createElement('div');
+	const pedals = document.createElement('div');
+	const acceleratePedal = document.createElement('button');
+	acceleratePedal.textContent = 'Accelerate';
+	acceleratePedal.onmousedown = function(){
+		car1.accelerate();
+	}
+	acceleratePedal.onmouseup = function(){
+		car1.stopAcceleration();
+	}
+	const deceleratePedal = document.createElement('button');
+	deceleratePedal.textContent = 'Decelerate';
+	deceleratePedal.onmousedown = function(){
+		car1.decelerate();
+	}
+	deceleratePedal.onmouseup = function(){
+		car1.stopDeceleration();
+	}
 
-	const buttonShowSpeed = document.createElement('button');
-	buttonShowSpeed.textContent = 'show speed';
-	buttonShowSpeed.onclick = () => car.showSpeed();
+	pedals.appendChild(acceleratePedal);
+	pedals.appendChild(deceleratePedal);
 
-	const buttonStopShowingSpeed = document.createElement('button');
-	buttonStopShowingSpeed.textContent = 'stop showing speed';
-	buttonStopShowingSpeed.onclick = () => car.stopShowingSpeed();
-
-	buttons.appendChild(buttonShowSpeed);
-	buttons.appendChild(buttonStopShowingSpeed);
-
-	document.body.appendChild(buttons);
+	document.body.appendChild(pedals);
+	
 </script>
 </body>
 </html>
