@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name='viewport' content='width=device-width,initial-scale=1,maximum-scale=1'>
+	<title>Task 4</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+	<form class='form' id='form'>
+		<div class='form__content'>
+			<h3 class='form__title'>Form action</h3>
+			<p class='form__paragraph'>This field will allow your visitors to choose whether they would like to subscribe or unsubscribe</p>
+			<div class='input-field'>
+				<label class='input-field__label'>
+					<span class='input-field__label-text'>Field Label</span>
+					<input class='input-field__input input-save' name='textinput'>
+				</label>
+			</div>
+			<div class='input-field'>
+				<label class='input-field__label'>
+					<span class='input-field__label-text'>Choose Type</span>
+					<select class='input-field__select input-save' name='type'>
+						<option value='1' selected>Radio Button</option>
+						<option value='2'>Radio Button 2</option>
+						<option value='3'>Radio Button 3</option>
+						<option value='4'>Radio Button 4</option>
+					</select>
+				</label>
+			</div>
+			<div class='input-field'>
+				<div class='input-field__label'>
+					<span class='input-field__label-text'>Choices</span>
+					<div class='input-field__radio-section'>
+						<div class="input-field__radio-field">
+							<div class='input-field__radio-wrapper'>
+								<input id='subscribe-radio' class='input-field__radio input-save' type='radio' value='1' name='choice'>
+								<label for='subscribe-radio' class='inpur-field__radio-pointer'></label>
+							</div>
+							<label for='subscribe-radio' class="input-field__radio-label">Subscribe</label>
+							<span for='subscribe-radio' class='radio-cancel input-field__radio-cancel'>&times;</span>
+						</div>
+						<div class="input-field__radio-field">
+							<div class='input-field__radio-wrapper'>
+								<input id='unsibscribe-radio' class='input-field__radio input-save' type='radio' value='2' name='choice'>
+								<label for='unsibscribe-radio' class='inpur-field__radio-pointer'></label>
+							</div>
+							<label for='unsibscribe-radio' class='input-field__radio-label'>Unsubscribe</label>
+							<span for='unsibscribe-radio' class='radio-cancel input-field__radio-cancel'>&times;</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='input-field'>
+				<label class='input-field__label iput-field__label_checkbox'>
+					<input class='input-field__input-checkbox input-save' type='checkbox' name='checkbox'>
+					<span class="input-field__input-checkbox-pointer">&#10003;</span>
+					<span class='input-field__label-checkbox-text'>Wrap in paragraph tags?</span>
+				</label>
+			</div>
+			<button class='form-button'>Add to form</button>
+		</div>
+	</form>
+
+<script src='js/polyfilles/CustomEventIE11.js'></script>
+<script src='js/saveInput.js'></script>
+<script src='js/radioCancel.js'></script>
+<script src='js/main.js'></script>
+</body>
+</html>
