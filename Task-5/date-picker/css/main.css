@@ -1,0 +1,116 @@
+.date-picker *, .date-picker *:before, .date-picker *:after {
+	box-sizing: border-box;
+}
+
+.date-picker-wrapper {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0,0,0,.6);
+}
+.date-picker-wrapper_opened {
+	display: flex;
+}
+
+.date-picker {
+	max-width: 420px;
+	padding: 4px;
+	font-family: Arial, sans-serif;
+	border-radius: 3px;
+	border: 1px solid #aaa;
+	background-color: #fff;
+}
+
+.date-picker__month-year {
+	position: relative;
+	padding: 8px 0;
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+	background-color: #eee;
+	border-radius: inherit;
+	border: 1px solid #ccc;
+}
+
+.date-picker__left-nav, .date-picker__right-nav {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: calc(50% - 10px);
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #555;
+	cursor: pointer;
+}
+.date-picker__left-nav:hover, .date-picker__right-nav:hover {
+	background-color: #417BF1;
+}
+.date-picker__left-nav {
+	left: 15px;
+}
+.date-picker__right-nav {
+	right: 15px;
+}
+.date-picker__left-nav:before, .date-picker__right-nav:before {
+	content: '';
+	border-color: transparent;
+	border-style: solid;
+}
+.date-picker__left-nav:before {
+	margin-left: -2.5px;
+	border-width: 5px 5px 5px 0;
+	border-right-color: #fff;
+}
+.date-picker__right-nav:before {
+	margin-right: -2.5px;
+	border-width: 5px 0 5px 5px;
+	border-left-color: #fff;
+}
+
+.date-picker__days-week {
+	display: flex;
+	padding: 10px 0;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.date-picker__day-week {
+	width: calc(100%/7);
+	text-align: center;
+}
+
+.date-picker__days-num {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.date-picker__day-num {
+	width: calc(100%/7 - 5px*6/7);
+	margin-bottom: 5px;
+	margin-right: 5px;
+	padding: 4px 6px;
+	text-align: right;
+	font-size: 20px;
+	border: 1px solid #ccc;
+	background-color: #E2EDEB;
+	cursor: pointer;
+	user-select: none;
+}
+.date-picker__day-num:nth-child(7n) {
+	margin-right: 0;
+}
+.date-picker__day-num:hover {
+	background-color: #417BF1;
+	color: #fff;
+}
+
+.date-picker__day-num_current {
+	background-color: #E0FD57;
+}
