@@ -1,0 +1,11 @@
+@import './some.css';
+
+body {
+	margin: 0;
+	line-height: 100vh;
+	font-family: Roboto;
+	font-size: 60px;
+	text-align: center;
+	color: white;
+	background: url(../images/image.jpg) center / cover;
+}
