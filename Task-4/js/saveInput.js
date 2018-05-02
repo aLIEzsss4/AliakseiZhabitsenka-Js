@@ -13,6 +13,7 @@ function saveInput(selector){
 				}
 				saveValue = function(){
 					localStorage[input.name] = input.value;
+					console.log(input.value);
 				}
 				break;
 			case 'select-one':
@@ -45,6 +46,6 @@ function saveInput(selector){
 				break;
 		}
 		if (getValue) getValue();
-		if (saveValue) inputs[i].addEventListener(event ? event : 'change', saveValue);
+		if (saveValue) inputs[i].addEventListener(event || 'change', saveValue);
 	}
 }
