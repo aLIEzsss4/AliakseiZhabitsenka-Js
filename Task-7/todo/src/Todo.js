@@ -25,7 +25,9 @@ class Todo extends React.Component {
 		const title = prompt('Enter title');
 		if (title === null) return;
 
-		const date = Date.parse(prompt('Enter date'));
+		const dateNow = new Date();
+		const exampleDate = `${dateNow.getMonth() + 1}-${dateNow.getDate()}-${dateNow.getFullYear()}`;
+		const date = Date.parse(prompt(`Enter date in format month-day-year(${exampleDate})`));
 		if (isNaN(date)){
 			alert('INCORRECT DATE');
 			return;
