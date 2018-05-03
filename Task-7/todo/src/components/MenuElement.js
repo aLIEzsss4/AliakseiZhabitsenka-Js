@@ -31,7 +31,7 @@ class menuElement extends Component {
 	render() {
 		let tasksElements;
 		if (this.props.tasks.length < 1){
-			tasksElements = <div className="todo__no-tasks">No tasks are found...</div>
+			tasksElements = <div className="todo__no-tasks">No tasks was found...</div>
 		} else {
 			tasksElements = this.props.tasks.map((task, i) => {
 				let indexClass = 'todo__task-index';
