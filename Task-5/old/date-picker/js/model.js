@@ -26,6 +26,10 @@ const Model = {
 
 	getFirstWeekDay() {
 		return this.getDate().getDay();
+	},
+
+	getTotalDays() {
+		return new Date(this.getYear(), this.getMonth() + 1, 0).getDate();
 	}
 
 }

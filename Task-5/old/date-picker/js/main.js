@@ -33,20 +33,22 @@ DatePicker.prototype = {
 		day = day < 10 ? '0' + day : day;
 		this.currentInput.value = `${year}.${month}.${day}`;
 
-		this.chosenDate = new Date(year, month, day);
+		this.chosenDate = new Date(year, Model.getMonth(), day);
 		this.currentInput.dateValue = this.chosenDate;
 	},
 
 	openView() {
 		const year = Model.getYear();
 		const month = Model.getMonth();
+		const firstWeekDay = Model.getFirstWeekDay();
+		const currentDay = Model.getCurrentDay();
+		const totalDays = Model.getTotalDays();
 		View.open({
 			year: year,
 			month: month,
-			firstWeekDay: Model.getFirstWeekDay(),
-			currentDay: Model.getCurrentDay(),
-			totalDays: new Date(year, month, 0).getDate(),
-			setDate: this.setDate.bind(this)
+			firstWeekDay: firstWeekDay,
+			currentDay: currentDay,
+			totalDays: totalDays
 		});
 	},
 

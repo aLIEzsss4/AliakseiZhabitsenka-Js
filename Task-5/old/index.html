@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Date Picker</title>
+	<link rel="stylesheet" href="date-picker/css/main.css">
+	<style>
+		[date-picker-input] {
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	
+	<div>
+		<label for="date-picker-input">Choose Date</label>
+		<input date-picker-input id='date-picker-input1'>
+		<button onclick="alert(document.getElementById('date-picker-input1').dateValue)">show date</button>
+	</div>
+	<div>
+		<label for="date-picker-input">Choose Date</label>
+		<input date-picker-input id='date-picker-input2'>
+		<button onclick="alert(document.getElementById('date-picker-input2').dateValue)">show date</button>
+	</div>
+
+<script src='date-picker/js/view.js'></script>
+<script src='date-picker/js/model.js'></script>
+<script src='date-picker/js/main.js'></script>
+<script>
+	document.addEventListener('DOMContentLoaded', function(){
+		const datePicker = new DatePicker('[date-picker-input]');
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task 5 Date Picker</title>
+</head>
+<body>
+
+	<div>
+		<label for='firstInput'>Click on input to pick date</label>
+		<input date-picker id='firstInput' placeholder='Pick your date'>
+		<button id='firstBtn'>Show Date</button>
+	</div>
+
+	<div>
+		<button><label for='secondInput'>Click me to pick date</label></button>
+		<input hidden date-picker id='secondInput' placeholder='Pick your date'>
+		<button id='secondBtn'>Show Date</button>
+	</div>
+
+<link rel="stylesheet" href="date-picker/styles/main.css">
+<script src='date-picker/view.js'></script>
+<script src='date-picker/model.js'></script>
+<script src='date-picker/main.js'></script>
+<script>
+
+	function alertInputsDateValueOnClick(buttonId, inputId) {
+		var btn = document.getElementById(buttonId);
+		btn.onclick = function(){
+			var input = document.getElementById(inputId);
+			var inputDate = new Date(input.dateValue);
+			alert(inputDate);
+		}
+	}
+
+	document.addEventListener('DOMContentLoaded', function(){
+		alertInputsDateValueOnClick('firstBtn', 'firstInput');
+		alertInputsDateValueOnClick('secondBtn', 'secondInput');
+
+		var datePicker = new DatePicker('[date-picker]');
+		datePicker.on('pick', function(){
+			var input = datePicker.openedInput;
+			var date = new Date(input.dateValue);
+			var day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate().toString();
+			var month = date.getMonth() < 10 ? '0' + date.getMonth() : date.getMonth().toString();
+			var value = day + '/' + month + '/' + date.getFullYear();
+			input.value = value;
+		});
+		datePicker.on('clear', function(){
+			var input = datePicker.openedInput;
+			input.value = '';
+		})
+	})
+
+</script>
+</body>
+</html>
