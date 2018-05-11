@@ -1,0 +1,51 @@
+.wrapper {
+  height: calc(100vh - 97px);
+  background-color: var(--dark);
+}
+
+
+.row {
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+.upbtnCol {
+  flex-shrink: 0;
+  padding-left: 5px;
+}
+
+.upbtn {
+  height: 100%;
+  border: 2px solid #fff;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
+.upbtn:hover {
+  background-color: var(--accent);
+}
+.upbtn:before {
+  font-family: FontAwesome;
+  content: '\f062';
+  font-size: 24px;
+  color: #fff;
+}
+
+
+.cardsGridCol {
+  flex-grow: 1;
+  overflow-x: hidden;
+}
+
+.cardsGrid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.noCards {
+  padding: 15px 30px;
+  font-size: 30px;
+  color: #fff;
+}

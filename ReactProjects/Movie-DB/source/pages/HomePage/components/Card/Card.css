@@ -1,0 +1,31 @@
+.cardWrapper {
+  position: relative;
+  margin: 0 5px 10px;
+  width: calc(20% - 10px);
+}
+
+.card {
+  padding-bottom: 150%;
+  background: url(http://baltimoresportsandlife.com/wp-content/uploads/2016/07/Movies.jpg) center / cover;
+}
+
+.cardHover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 26px;
+  font-weight: bold;
+  background-color: var(--accent);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity .15s;
+}
+.cardHover:hover {
+  opacity: .7;
+}
